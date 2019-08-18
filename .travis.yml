@@ -1,0 +1,35 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t vipinjain/robot-docker .
+
+script:
+  - docker run -e BROWSER=chrome --shm-size=1g vipinjain/robot-docker run-smoke-test-in-virtual-screen.sh
+
+after_success:
+  
+  
+  # Log in to the Docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push vipinjain/robot-docker
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "robot-docker"
+  env: "RobotDocker-env"
+  bucket_name: "elasticbeanstalk-us-east-1-773329543652"
+  bucket_path: "robot-docker"
+  on:
+    branch: master
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+  access_key_id: $AWS_ACCESSS_KEY
+  
+  

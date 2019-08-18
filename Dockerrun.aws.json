@@ -1,0 +1,18 @@
+{
+    "AWSEBDockerrunVersion": 1,
+    "containerDefinitions": [
+       {
+            "name": "robot",
+            "image": "vipinjain/robot-docker",
+            "hostname": "robot",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 8000,
+                    "containerPort": 8000
+                }
+            ],
+            "memory": 128
+        }
+    ]
+}

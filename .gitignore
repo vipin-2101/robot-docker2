@@ -1,0 +1,13 @@
+*~
+
+# Eclipse
+.settings/
+.project
+
+# IntelliJ
+.idea/
+*.iml
+
+#Snapshot files
+*.png
+
