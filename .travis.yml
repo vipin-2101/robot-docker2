@@ -21,7 +21,7 @@ after_success:
 
 #deploy:
   #provider: elasticbeanstalk
-  #region: "us-east-1"
+  #region: "us-west-1"
   #app: "robot-docker"
   #env: "RobotDocker-env"
   #bucket_name: "elasticbeanstalk-us-east-1-773329543652"
