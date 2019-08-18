@@ -8,7 +8,7 @@ then
         robot \
         --outputDir /app/reports \
         ${ROBOT_OPTIONS} \
-        /app/test
+        --shm-size=1g /app/test
 else
     xvfb-run \
         --server-args="-screen 0 ${SCREEN_WIDTH}x${SCREEN_HEIGHT}x${SCREEN_COLOUR_DEPTH} -ac" \
