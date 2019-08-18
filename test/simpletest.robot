@@ -2,7 +2,7 @@
 Library			SeleniumLibrary
 
 *** Variables ***
-${BROWSER}		%{BROWSER}
+${BROWSER}		chrome
 
 *** Test Cases ***
 Visit Amazon
