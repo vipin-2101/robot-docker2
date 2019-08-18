@@ -7,7 +7,7 @@ then
         --server-args="-screen 0 ${SCREEN_WIDTH}x${SCREEN_HEIGHT}x${SCREEN_COLOUR_DEPTH} -ac" \
         robot \
         --outputDir /app/reports \
-        BROWSER=chrome ${ROBOT_OPTIONS} \
+        -e BROWSER=chrome --shm-size=1g \
         /app/test
 else
     xvfb-run \
