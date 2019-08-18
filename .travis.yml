@@ -22,10 +22,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "robot-docker4"
-  env: "RobotDocker4-env"
+  app: "robot-docker5"
+  env: "RobotDocker5-env"
   bucket_name: "elasticbeanstalk-us-east-1-773329543652"
-  bucket_path: "robot-docker4"
+  bucket_path: "robot-docker5"
   on:
     branch: master
   secret_access_key:
