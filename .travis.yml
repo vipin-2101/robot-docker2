@@ -19,17 +19,17 @@ after_success:
   - docker push vipinjain/robot-docker
 
 
-#deploy:
-  #provider: elasticbeanstalk
-  #region: "us-west-1"
-  #app: "robot-docker"
-  #env: "RobotDocker-env"
-  #bucket_name: "elasticbeanstalk-us-east-1-773329543652"
-  #bucket_path: "robot-docker"
-  #on:
-    #branch: master
-  #secret_access_key:
-    #secure: "$AWS_SECRET_KEY"
-  #access_key_id: $AWS_ACCESSS_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "robot-docker1"
+  env: "RobotDocker1-env"
+  bucket_name: "elasticbeanstalk-us-east-1-773329543652"
+  bucket_path: "robot-docker1"
+  on:
+    branch: master
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+  access_key_id: $AWS_ACCESSS_KEY
   
   
